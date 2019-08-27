@@ -1,0 +1,7 @@
+<%= f.file_field :image %>
+<%= paginate @posts %>
+<%= image_tag post.image, class: 'main-image' %>
+<div class="posts">
+  <% @posts.each do |post| %>
+    <section class="post"> ... </section>
+  <% end %>
