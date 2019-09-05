@@ -12,6 +12,11 @@
     <%= render '/layouts/nav'%>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
+    <% if user_signed_in? %>
+
+    <%= render '/layouts/user_profile'%>
+    <% end %> 
+
     <%= yield %>
   </main>
 </body>

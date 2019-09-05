@@ -1,0 +1,23 @@
+<%= form_with(model: igtv, local: true) do |form| %>
+  <% if igtv.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(igtv.errors.count, "error") %> prohibited this igtv from being saved:</h2>
+
+      <ul>
+        <% igtv.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group row">
+    <%= form.label :avatar, class: 'col-sm-3 col-form-label' %>
+    <div class="col-sm-9">
+      <%= form.file_field :avatar, class: 'form-control' %>
+    </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

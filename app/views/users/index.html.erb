@@ -9,4 +9,17 @@
       </ul>
     </div>
   </div>
+  <a href="<%= followers_user_path(@user) %>">
+    <strong id="following" class="stat">
+        <%= @user.followers.count %>
+    </strong>
+    followers
+</a>
+  <a href="<%= followers_user_path(@user) %>">
+    <strong id="followers" class="stat">
+        <%= @user.followers.count %>
+    </strong>
+    followers
+</a>
+
   </div>

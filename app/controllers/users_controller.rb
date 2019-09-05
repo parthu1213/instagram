@@ -14,13 +14,6 @@ class UsersController < ApplicationController
   end
 
   def edit
-    #   if @user
-    #     respond_to do |format|
-    #      format.html
-    #    end
-    #  else
-    # redirect_to users_path
-    # end
   end
 
   def update
@@ -33,11 +26,21 @@ class UsersController < ApplicationController
      end
   end
 
+  def follow
+    @current_user.follow(@user)
+    @follow = Follow.find_by(follower: @current_user, followable: @user)
+    respond_to :js
+  end
+
+  def unfollow
+    @current_user.stop_following(@user)
+    respond_to :js
+  end
+
   private
 
   def user_params
     params.require(:user).permit(:username, :name, :website,
                         :bio, :email, :phone, :gender, :avatar)
   end
-
 end

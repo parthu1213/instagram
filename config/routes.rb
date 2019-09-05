@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  resources :taggeds
+  resources :saveds
+  resources :igtvs
   devise_for :user
   get 'home/index'
   root :to =>"home#index"
